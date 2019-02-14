@@ -3,6 +3,8 @@ import IGlobalNavItem from "./model/IGlobalNavItem";
 import GlobalNavNode from "./GlobalNavNode";
 import GlobalNavProvider from "./provider/GlobalNavProvider";
 
+require("./styles.scss"); 
+
 export interface IGlobalNavProps {}
 
 export interface IGlobalNavState {

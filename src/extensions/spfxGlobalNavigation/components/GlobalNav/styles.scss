@@ -1,0 +1,99 @@
+.global-nav {
+    position: relative;
+    display: inline-block;
+    margin: 13px 0 0 0;
+  
+    /* hub nav */
+    .ms-HorizontalNavItem {
+      padding: 20px;
+      display: inline-block;
+      margin-right: 0;
+  
+      &,
+      .ms-HorizontalNavItem-link {
+        color: #1e1e1e;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          &,
+          .ms-HorizontalNavItem-link {
+            &,
+            & i {
+              background-color: #1e1e1e;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    ul.root > li {
+      display: inline-block;
+  
+      a {
+        padding: 20px 15px;
+        display: inline-block;
+        &,
+        &:link,
+        &:hover,
+        &:visited {
+          color: #1e1e1e;
+          text-decoration: none;
+        }
+        &:hover {
+          background-color: #1e1e1e;
+          color: #ffffff;
+        }
+      }
+    }
+  
+    .td-dropdown {
+      position: relative;
+      display: inline-block;
+  
+      i {
+        margin-left: 10px;
+        font-size: 10px;
+      }
+  
+      .td-dropdown-menu {
+        background-color: #1e1e1e;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        min-width: 100%;
+        display: none;
+        z-index: 999;
+        a {
+          color: #ffffff !important;
+        }
+      }
+  
+      &:hover {
+        > a {
+          background-color: #1e1e1e;
+          color: #ffffff !important;
+        }
+        .td-dropdown-menu {
+          display: block;
+          > li > a {
+            display: block;
+            white-space: nowrap;
+            &:hover {
+              background-color: #c0392b;
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+  }
+  

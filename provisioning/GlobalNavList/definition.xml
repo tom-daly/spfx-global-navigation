@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<pnp:Provisioning xmlns:pnp="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://schemas.dev.office.com/PnP/2018/05/ProvisioningSchema https://raw.githubusercontent.com/OfficeDev/PnP-Provisioning-Schema/master/OfficeDevPnP.ProvisioningSchema/ProvisioningSchema-2018-05.xsd">
+    <pnp:Preferences Author="TD" Version="1.0" Generator="TD"></pnp:Preferences>
+    <pnp:Templates>
+        <pnp:ProvisioningTemplate ID="GlobalNavSchema" Version="0">
+            <pnp:SiteFields>
+                <Field ID="{C484ED7D-852E-4D0B-9D4A-442CAB916168}" Name="GlobalNavUrl" StaticName="GlobalNavUrl" DisplayName="Url" Type="Text" Group="Global Nav Site Columns" Overwrite="TRUE" />
+                <Field ID="{B2CDE18F-F846-4FD1-9744-57ED586A198F}" Name="GlobalNavOrder" StaticName="GlobalNavOrder" DisplayName="Order" Type="Number" Decimals="0" Percentage="False" Group="Global Nav Site Columns" Overwrite="TRUE" />
+                <Field ID="{AFA820DA-E3A8-464F-9F29-C0359DCBB5D1}" Name="GlobalNavOpenInNewWindow" StaticName="GlobalNavOpenInNewWindow" DisplayName="Open In New Window" Type="Boolean" Group="Global Nav Site Columns" Overwrite="TRUE">
+                    <Default>0</Default>
+                </Field>
+                <!--<Field ID='{068992B0-C110-411E-A152-4C17E17E43DE}' Name='GlobalNavParent' StaticName='GlobalNavParent' DisplayName='Parent' Group='Global Nav Site Columns' Required='false' Type='Lookup' List='Lists/GlobalNavList' ShowField='Title' Overwrite='TRUE' OverwriteInChildScopes='TRUE' />-->
+            </pnp:SiteFields>
+            <pnp:ContentTypes>
+                <pnp:ContentType ID="0x010027D49D07CA2F4E2FA34B9CFB1645D460" Name="Global Nav Content Type" Group="Custom Content Types" Description="" Version="0">
+                    <pnp:FieldRefs>
+                        <pnp:FieldRef ID="{C484ED7D-852E-4D0B-9D4A-442CAB916168}" />
+                        <pnp:FieldRef ID="{B2CDE18F-F846-4FD1-9744-57ED586A198F}" />
+                        <pnp:FieldRef ID="{AFA820DA-E3A8-464F-9F29-C0359DCBB5D1}" />
+                        <!--<pnp:FieldRef ID="{068992B0-C110-411E-A152-4C17E17E43DE}" />-->
+                    </pnp:FieldRefs>
+                </pnp:ContentType>
+            </pnp:ContentTypes>
+           <pnp:Lists>
+                <pnp:ListInstance Title="Global Nav List" Description="" OnQuickLaunch="true" EnableFolderCreation="false" TemplateType="100" Url="Lists/GlobalNavList" RemoveExistingContentTypes="true" EnableAttachments="false" >
+                    <pnp:ContentTypeBindings>
+                        <pnp:ContentTypeBinding ContentTypeID="0x010027D49D07CA2F4E2FA34B9CFB1645D460" Default="true"/>
+                    </pnp:ContentTypeBindings>
+                    <pnp:Views RemoveExistingViews="true">
+                        <View BaseViewID="1" Type="HTML" WebPartZoneID="Main" DisplayName="$Resources:core,objectiv_schema_mwsidcamlidC24;" DefaultView="TRUE" MobileView="TRUE" MobileDefaultView="TRUE" SetupPath="pages\viewpage.aspx" ImageUrl="/_layouts/15/images/generic.png?rev=23" Url="AllItems.aspx">
+                            <Toolbar Type="Standard" />
+                            <XslLink Default="TRUE">main.xsl</XslLink>
+                            <JSLink>clienttemplates.js</JSLink>
+                            <RowLimit Paged="TRUE">30</RowLimit>
+                            <ViewFields>
+                                <FieldRef Name="Title"></FieldRef>
+                                <FieldRef Name="GlobalNavUrl"></FieldRef>
+                                <FieldRef Name="GlobalNavOpenInNewWindow"></FieldRef>
+                                <FieldRef Name="GlobalNavOrder"></FieldRef>
+                                <!--<FieldRef Name="GlobalNavParent"></FieldRef>-->
+                            </ViewFields>
+                            <Query>
+                                <OrderBy>
+                                    <FieldRef Name="GlobalNavOrder"></FieldRef>
+                                </OrderBy>
+                            </Query>
+                            <ParameterBindings>
+                                <ParameterBinding Name="NoAnnouncements" Location="Resource(wss,noXinviewofY_LIST)" />
+                                <ParameterBinding Name="NoAnnouncementsHowTo" Location="Resource(wss,noXinviewofY_DEFAULT)" />
+                            </ParameterBindings>
+                        </View>
+                    </pnp:Views>
+                </pnp:ListInstance>
+            </pnp:Lists>
+        </pnp:ProvisioningTemplate>
+    </pnp:Templates>
+</pnp:Provisioning>
