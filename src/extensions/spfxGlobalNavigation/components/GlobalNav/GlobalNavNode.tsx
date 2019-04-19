@@ -1,6 +1,7 @@
 import * as React from "react";
 import IGlobalNavNode from "./model/IGlobalNavNode";
 import IGlobalNavItem from "./model/IGlobalNavItem";
+import slugify from "slugify";
 
 export interface IGlobalNavNodeProps extends IGlobalNavNode {}
 
@@ -10,8 +11,9 @@ export default class GlobalNavNode extends React.Component<
 > {
 
   public render(): JSX.Element {
+    const titleClassName = slugify(this.props.globalNavItem.title, { lower: true });
     return (
-      <li key={this.props.key} className={this.props.globalNavItem.subNavItems ? "td-dropdown" : ""}>
+      <li key={this.props.key} className={this.props.globalNavItem.subNavItems ? `td-dropdown ${titleClassName}` : `${titleClassName}`}>
         <a href={this.props.globalNavItem.url || "#"} target={this.props.globalNavItem.openInNewWindow ? "_blank" : "_self"}>
           {this.props.globalNavItem.title}
           {
