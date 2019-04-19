@@ -8,9 +8,7 @@
       "customActions": {
         "d70d31d6-43d3-4998-a6d4-7aecc9912c19": {
           "location": "ClientSideExtension.ApplicationCustomizer",
-          "properties": {
-            "testMessage": "Test message"
-          }
+          "properties": { }
         }
       }
     },
@@ -19,9 +17,7 @@
       "customActions": {
         "d70d31d6-43d3-4998-a6d4-7aecc9912c19": {
           "location": "ClientSideExtension.ApplicationCustomizer",
-          "properties": {
-            "testMessage": "Test message"
-          }
+          "properties": { }
         }
       }
     }
