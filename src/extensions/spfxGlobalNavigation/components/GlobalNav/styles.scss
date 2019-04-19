@@ -1,99 +1,124 @@
 .global-nav {
-    position: relative;
+  position: relative;
+  display: inline-block;
+  margin: 0 0 0 25px;
+
+  /* hub nav */
+  .ms-HorizontalNavItem {
+    padding: 20px;
     display: inline-block;
-    margin: 13px 0 0 0;
-  
-    /* hub nav */
-    .ms-HorizontalNavItem {
-      padding: 20px;
-      display: inline-block;
-      margin-right: 0;
-  
-      &,
-      .ms-HorizontalNavItem-link {
-        color: #1e1e1e;
-        text-decoration: none;
-        cursor: pointer;
-        &:hover {
-          &,
-          .ms-HorizontalNavItem-link {
-            &,
-            & i {
-              background-color: #1e1e1e;
-              color: #ffffff;
-            }
-          }
-        }
-      }
-    }
-  
-    ul,
-    li {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-    ul.root > li {
-      display: inline-block;
-  
-      a {
-        padding: 20px 15px;
-        display: inline-block;
-        &,
-        &:link,
-        &:hover,
-        &:visited {
-          color: #1e1e1e;
-          text-decoration: none;
-        }
-        &:hover {
-          background-color: #1e1e1e;
-          color: #ffffff;
-        }
-      }
-    }
-  
-    .td-dropdown {
-      position: relative;
-      display: inline-block;
-  
-      i {
-        margin-left: 10px;
-        font-size: 10px;
-      }
-  
-      .td-dropdown-menu {
-        background-color: #1e1e1e;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        min-width: 100%;
-        display: none;
-        z-index: 999;
-        a {
-          color: #ffffff !important;
-        }
-      }
-  
+    margin-right: 0;
+
+    &,
+    .ms-HorizontalNavItem-link {
+      color: #1e1e1e;
+      text-decoration: none;
+      cursor: pointer;
       &:hover {
-        > a {
-          background-color: #1e1e1e;
-          color: #ffffff !important;
-        }
-        .td-dropdown-menu {
-          display: block;
-          > li > a {
-            display: block;
-            white-space: nowrap;
-            &:hover {
-              background-color: #c0392b;
-              color: #ffffff;
-            }
+        &,
+        .ms-HorizontalNavItem-link {
+          &,
+          & i {
+            background-color: #00a0f5;
+            color: #ffffff;
           }
         }
       }
     }
   }
-  
+
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  ul.root {
+    > li {
+      display: inline-block;
+
+      //all links
+      a {
+        padding: 14px 16px;
+        display: inline-block;
+        &,
+        &:link,
+        &:hover,
+        &:visited {
+          color: #00a0f5;
+          text-decoration: none;
+        }
+        &:hover {
+          background-color: #00a0f5;
+          color: #fff;
+        }
+
+        //second links
+        + ul a {
+          padding: 5px 17px;
+          font-size: 14px;
+          font-weight: bold;
+          text-transform: none;
+          &,
+          &:link,
+          &:hover,
+          &:visited {
+            color: #4d5055;
+            text-decoration: none;
+          }
+          &:hover {
+            background-color: #fff;
+            color: #00a0f5;
+          }
+        }
+      }
+    }
+
+    .td-dropdown {
+      position: relative;
+      display: inline-block;
+
+      a:hover {
+        color: #fff;
+        background-color: #00a0f5;
+      }
+
+      i {
+        margin-left: 10px;
+        font-size: 10px;
+      }
+
+      .td-dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        margin: -3px 0 0 0;
+        padding: 0;
+        min-width: 100%;
+        display: none;
+        z-index: 999;
+        border: 1px solid #eee;
+        min-width: 185px;
+        box-shadow: 1px 1px 7px #ccc;
+        background-color: #fff;
+      }
+
+      //sub links
+      &:hover {
+        .td-dropdown-menu {
+          display: block;
+
+          > li > a {
+            display: block;
+            white-space: nowrap;
+            display: inline-block;
+            line-height: 25px;
+            width: 100%;
+            border-bottom: 1px solid #eeeeee;
+            box-sizing: border-box;
+          }
+        }
+      }
+    }
+  }
+}
