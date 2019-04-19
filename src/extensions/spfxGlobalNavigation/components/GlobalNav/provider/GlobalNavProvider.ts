@@ -6,8 +6,7 @@ export default class GlobalNavProvider {
   constructor() {
     sp.setup({
       sp: {
-        //baseUrl: `${window.location.protocol}//${window.location.hostname}`
-        baseUrl: `https://bandrdev.sharepoint.com/sites/globalnav`
+        baseUrl: `${window.location.protocol}//${window.location.hostname}`
       }
     });
   }
