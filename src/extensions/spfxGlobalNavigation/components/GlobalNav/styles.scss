@@ -1,3 +1,25 @@
+$navNodeTextColor: #1e1e1e;
+$navNodeBgColor: #ffffff;
+$navNodeHoverTextColor: #ffffff;
+$navNodeHoverBgColor: #00a0f5;
+$navNodeBorderColor: #eeeeee;
+
+$navNodeChildTextColor: #1e1e1e;
+$navNodeChildBgColor: #ffffff;
+$navNodeChildHoverTextColor: #ffffff;;
+$navNodeChildHoverBgColor: #00a0f5;
+
+$navDropDownMenuBgColor: #ffffff;
+
+#DeltaTopNavigation {
+  > div[id$='TopNavigationMenu'] {
+    display: none;
+  }
+  .global-nav {
+    margin: 0;
+  }
+}
+
 .global-nav {
   position: relative;
   display: inline-block;
@@ -11,7 +33,8 @@
 
     &,
     .ms-HorizontalNavItem-link {
-      color: #1e1e1e;
+      color: $navNodeTextColor;
+      background-color: $navNodeBgColor;
       text-decoration: none;
       cursor: pointer;
       &:hover {
@@ -19,8 +42,8 @@
         .ms-HorizontalNavItem-link {
           &,
           & i {
-            background-color: #00a0f5;
-            color: #ffffff;
+            background-color: $navNodeHoverBgColor;
+            color: $navNodeHoverTextColor;
           }
         }
       }
@@ -45,12 +68,13 @@
         &:link,
         &:hover,
         &:visited {
-          color: #00a0f5;
+          color: $navNodeTextColor;
+          background-color: $navNodeBgColor;
           text-decoration: none;
         }
         &:hover {
-          background-color: #00a0f5;
-          color: #fff;
+          color: $navNodeHoverTextColor;
+          background-color: $navNodeHoverBgColor;
         }
 
         //second links
@@ -63,12 +87,13 @@
           &:link,
           &:hover,
           &:visited {
-            color: #4d5055;
+            color: $navNodeChildTextColor;
+            background-color: $navNodeChildBgColor;
             text-decoration: none;
           }
           &:hover {
-            background-color: #fff;
-            color: #00a0f5;
+            color: $navNodeChildHoverTextColor;
+            background-color: $navNodeChildHoverBgColor;
           }
         }
       }
@@ -77,11 +102,6 @@
     .td-dropdown {
       position: relative;
       display: inline-block;
-
-      a:hover {
-        color: #fff;
-        background-color: #00a0f5;
-      }
 
       i {
         margin-left: 10px;
@@ -97,10 +117,10 @@
         min-width: 100%;
         display: none;
         z-index: 999;
-        border: 1px solid #eee;
+        border: 1px solid $navNodeBorderColor;
         min-width: 185px;
         box-shadow: 1px 1px 7px #ccc;
-        background-color: #fff;
+        background-color: $navDropDownMenuBgColor;
       }
 
       //sub links
@@ -114,7 +134,7 @@
             display: inline-block;
             line-height: 25px;
             width: 100%;
-            border-bottom: 1px solid #eeeeee;
+            border-bottom: 1px solid $navNodeBorderColor;
             box-sizing: border-box;
           }
         }

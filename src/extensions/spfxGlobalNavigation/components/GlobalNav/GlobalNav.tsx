@@ -5,7 +5,9 @@ import GlobalNavProvider from "./provider/GlobalNavProvider";
 
 require("./styles.scss"); 
 
-export interface IGlobalNavProps {}
+export interface IGlobalNavProps {
+  webUrl?: string;
+}
 
 export interface IGlobalNavState {
   globalNavItems: IGlobalNavItem[];
@@ -52,7 +54,7 @@ export default class Header extends React.Component<
             (globalNavItem: IGlobalNavItem, index: number) => (
               <GlobalNavNode key={index} globalNavItem={globalNavItem} />
             )
-          )}
+            )}
         </ul>
       </div>
     );

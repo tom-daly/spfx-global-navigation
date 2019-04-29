@@ -42,6 +42,7 @@ IF NOT [%_build%]==[] (
         call npm version %_build%
     )
     call gulp package-solution --ship
+    call npx webpack --config webpack.config.js
     goto openfolder
 
 :openfolder
