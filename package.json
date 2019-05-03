@@ -19,7 +19,6 @@
     "@microsoft/sp-dialog": "1.7.1",
     "@pnp/common": "^1.3.2",
     "@pnp/logging": "^1.3.2",
-    "@pnp/nodejs": "^1.3.2",
     "@pnp/odata": "^1.3.2",
     "@pnp/polyfill-ie11": "^1.0.1",
     "@pnp/sp": "^1.3.2",
