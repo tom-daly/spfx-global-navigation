@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+    <ClientSideComponentInstance
+        Title="SpfxGlobalNavigation"
+        Location="ClientSideExtension.ApplicationCustomizer"
+        ComponentId="d70d31d6-43d3-4998-a6d4-7aecc9912c19"
+        Properties="">
+    </ClientSideComponentInstance>
+</Elements>

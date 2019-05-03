@@ -1,7 +1,7 @@
+import "@babel/polyfill";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import GlobalNav from "../GlobalNav/GlobalNav";
-import "@babel/polyfill";
 
 require("./classic.scss");
 
