@@ -1,5 +1,6 @@
 import IGlobalNavItem from "../model/IGlobalNavItem";
 import ISPGlobalNavItem from "../model/ISPGlobalNavItem";
+import "@pnp/polyfill-ie11";
 import { sp } from "@pnp/sp";
 
 export default class GlobalNavProvider {

@@ -2,25 +2,18 @@
 
 This is where you include your WebPart documentation.
 
-### Building the code
+### Additional Dependencies for Classic Mode Build ###
+dependencies
+@babel/polyfill
 
-```bash
-git clone the repo
-npm i
-npm i -g gulp
-gulp
-```
+devDependencies
+"css-loader": "^2.1.1",
+"mini-css-extract-plugin": "^0.6.0",
+"sass-loader": "^7.1.0",
+"style-loader": "^0.23.1",
 
-This package produces the following:
+### Building the code for Classic Mode
+Execute the following command:
 
-* lib/* - intermediate-stage commonjs build artifacts
-* dist/* - the bundled script, along with other resources
-* deploy/* - all resources which should be uploaded to a CDN.
+npx webpack --config webpack.config.js
 
-### Build options
-
-gulp clean - TODO
-gulp test - TODO
-gulp serve - TODO
-gulp bundle - TODO
-gulp package-solution - TODO

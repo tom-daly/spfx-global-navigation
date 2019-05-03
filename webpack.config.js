@@ -1,12 +1,10 @@
 const path = require("path");
-const webpack = require("webpack");
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   mode: "development",
-  entry:
-    "./src/extensions/spfxGlobalNavigation/components/ClassicMode/ClassicMode.ts",
+  entry: ['@babel/polyfill',
+    "./src/extensions/spfxGlobalNavigation/components/ClassicMode/ClassicMode.ts"],
   module: {
     rules: [
       {
