@@ -2,7 +2,6 @@ const path = require("path");
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  devtool: "source-map",
   mode: "development",
   entry: ['@babel/polyfill',
     path.resolve(__dirname, './src/extensions/spfxGlobalNavigation/components/ClassicMode/ClassicMode.ts')],
