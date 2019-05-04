@@ -3,7 +3,7 @@ import IGlobalNavItem from "./model/IGlobalNavItem";
 import GlobalNavNode from "./GlobalNavNode";
 import GlobalNavProvider from "./provider/GlobalNavProvider";
 
-require("./styles.scss"); 
+require("./globalNavStyles.scss"); 
 
 export interface IGlobalNavProps {
   webUrl?: string;
