@@ -1,4 +1,6 @@
-$navNodeTextColor: #1e1e1e;
+@import url("https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css");
+
+$navNodeTextColor: #00a0f5;
 $navNodeBgColor: #ffffff;
 $navNodeHoverTextColor: #ffffff;
 $navNodeHoverBgColor: #00a0f5;
@@ -6,8 +8,8 @@ $navNodeBorderColor: #eeeeee;
 
 $navNodeChildTextColor: #1e1e1e;
 $navNodeChildBgColor: #ffffff;
-$navNodeChildHoverTextColor: #ffffff;;
-$navNodeChildHoverBgColor: #00a0f5;
+$navNodeChildHoverTextColor: #00a0f5;
+$navNodeChildHoverBgColor: #ffffff;
 
 $navDropDownMenuBgColor: #ffffff;
 
@@ -23,12 +25,14 @@ $navDropDownMenuBgColor: #ffffff;
 .global-nav {
   position: relative;
   display: inline-block;
+  vertical-align: top;
   margin: 0 0 0 25px;
 
   /* hub nav */
   .ms-HorizontalNavItem {
     padding: 20px;
     display: inline-block;
+    vertical-align: top;
     margin-right: 0;
 
     &,
@@ -59,10 +63,11 @@ $navDropDownMenuBgColor: #ffffff;
   ul.root {
     > li {
       display: inline-block;
+      vertical-align: top;
 
       //all links
       a {
-        padding: 4px 10px;
+        padding: 14px 16px;
         display: inline-block;
         &,
         &:link,
@@ -112,7 +117,7 @@ $navDropDownMenuBgColor: #ffffff;
         position: absolute;
         top: 100%;
         left: 0;
-        margin: 0;
+        margin: -3px;
         padding: 0;
         min-width: 100%;
         display: none;
@@ -139,6 +144,28 @@ $navDropDownMenuBgColor: #ffffff;
           }
         }
       }
+    }
+  }
+}
+
+.home {
+  a {
+    width: 16px;
+    position: relative;
+    color: transparent !important;
+    display: inline-block;
+    font-family: "FabricMDL2Icons";
+    font-style: normal;
+    font-weight: 400;
+    &:before {
+      color: $navNodeTextColor;
+      content: '\EA8A';
+      position: absolute;
+      font-size: 19px;
+      //top: 5px;
+    }
+    &:hover:before {
+      color: $navNodeHoverTextColor;
     }
   }
 }
