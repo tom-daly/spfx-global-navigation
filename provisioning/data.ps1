@@ -61,3 +61,11 @@ function GenerateTestData-Navigation {
 }
 
 GenerateTestData-Navigation
+
+
+
+
+Connect-PnPOnline –Url https://bandrdev.sharepoint.com/sites/gnt
+Get-PnPJavaScriptLink
+Add-PnPJavaScriptLink -Name GlobalNav -Url https://bandrdev.sharepoint.com/sites/gnt/SiteAssets/top-navigation.js -Scope Site -Sequence 100
+Remove-PnPJavaScriptLink -Name GlobalNav
