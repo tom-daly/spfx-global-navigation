@@ -14,7 +14,7 @@ $navNodeChildHoverBgColor: #ffffff;
 $navDropDownMenuBgColor: #ffffff;
 
 #DeltaTopNavigation {
-  > div[id$='TopNavigationMenu'] {
+  > div[id$="TopNavigationMenu"] {
     display: none;
   }
   .global-nav {
@@ -52,6 +52,10 @@ $navDropDownMenuBgColor: #ffffff;
         }
       }
     }
+  }
+
+  .td-dropdown-menu {
+    display: none;
   }
 
   ul,
@@ -106,7 +110,6 @@ $navDropDownMenuBgColor: #ffffff;
 
     .td-dropdown {
       position: relative;
-      display: inline-block;
 
       i {
         margin-left: 10px;
@@ -115,8 +118,6 @@ $navDropDownMenuBgColor: #ffffff;
 
       .td-dropdown-menu {
         position: absolute;
-        top: 100%;
-        left: 0;
         margin: -3px;
         padding: 0;
         min-width: 100%;
@@ -130,7 +131,7 @@ $navDropDownMenuBgColor: #ffffff;
 
       //sub links
       &:hover {
-        .td-dropdown-menu {
+        > .td-dropdown-menu {
           display: block;
 
           > li > a {
@@ -148,6 +149,28 @@ $navDropDownMenuBgColor: #ffffff;
   }
 }
 
+.td-dropdown[data-level="0"] {
+  display: inline-block;
+
+  > .td-dropdown-menu {
+    display: none;
+    top: 100%;
+    left: 0;
+  }
+}
+
+.td-dropdown:not([data-level="0"]) {
+  display: block;
+  width: 100%;
+
+  > .td-dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+}
+
 .home {
   a {
     width: 16px;
@@ -159,7 +182,7 @@ $navDropDownMenuBgColor: #ffffff;
     font-weight: 400;
     &:before {
       color: $navNodeTextColor;
-      content: '\EA8A';
+      content: "\EA8A";
       position: absolute;
       font-size: 19px;
       //top: 5px;
