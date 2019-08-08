@@ -1,4 +1,4 @@
-$configFile = "savedSiteUrl.json";
+﻿$configFile = "config.json";
 
 if((Test-Path $configFile) -eq $false) {
     $siteUrl = Read-Host -Prompt "Enter the site url"
@@ -57,7 +57,15 @@ function GenerateTestData-Navigation {
     Add-PnPListItem -List $listName -ContentType "Global Nav Content Type" -Values @{"Title"="Ahmedabad";"GlobalNavUrl"="#";"GlobalNavOrder"="0";"GlobalNavParent"="$locationsId";} 
     Add-PnPListItem -List $listName -ContentType "Global Nav Content Type" -Values @{"Title"="London";"GlobalNavUrl"="#";"GlobalNavOrder"="1";"GlobalNavParent"="$locationsId";} 
     Add-PnPListItem -List $listName -ContentType "Global Nav Content Type" -Values @{"Title"="New York";"GlobalNavUrl"="#";"GlobalNavOrder"="2";"GlobalNavParent"="$locationsId";} 
-
+    Add-PnPListItem -List $listName -ContentType "Global Nav Content Type" -Values @{"Title"="Philly";"GlobalNavUrl"="#";"GlobalNavOrder"="3";"GlobalNavParent"="$locationsId";} 
 }
 
 GenerateTestData-Navigation
+
+
+
+
+#Connect-PnPOnline –Url https://bandrdev.sharepoint.com/sites/gnt
+#Get-PnPJavaScriptLink
+#Add-PnPJavaScriptLink -Name GlobalNav -Url https://bandrdev.sharepoint.com/sites/gnt/SiteAssets/top-navigation.js -Scope Site -Sequence 100
+#Remove-PnPJavaScriptLink -Name GlobalNav

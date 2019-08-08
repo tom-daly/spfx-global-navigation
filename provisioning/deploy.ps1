@@ -1,23 +1,22 @@
-$configFile = "savedSiteUrl.json";
+$siteUrl = Read-Host -Prompt "Enter the site url"
 
-if((Test-Path $configFile) -eq $false) {
-    $siteUrl = Read-Host -Prompt "Enter the site url"
-    @{siteUrl=$siteUrl} | ConvertTo-Json | Out-File $configFile
+if($siteUrl -like '*ADFS_SITE_URL.com*') {
+    Connect-PnPOnline -url $siteUrl -UseWebLogin
+}
+else {
+    Connect-PnPOnline -url $siteUrl -Credentials (Get-Credential)
 }
 
-$configObject = Get-Content $configFile | ConvertFrom-Json
-Connect-PnPOnline -url $configObject.siteUrl
-function ProvisionList() {
+
+function ProvisionLists() {
     Write-Host ""
     Write-Host "Provisioning Site Columns, Content Types, & Lists" -ForegroundColor Yellow
     Write-Host "-------------------------------------------------" -ForegroundColor Yellow
-    
-    Write-Host "Global Navigation" -ForegroundColor Green
+    Write-Host "Global Nav List" -ForegroundColor Green
     Apply-PnPProvisioningTemplate ".\GlobalNavList\definition.xml"
+    Write-Host "Provisioning done" -ForegroundColor Blue
 }
 
-## The look up field in the schema used to fail
-## this method was used during that time but no longer seems needed
 function ConfigureLookupField() {
     Write-Host "Adding Lookup Field" -ForegroundColor Green
     $globalNavList = Get-PnPList -Identity "Lists/GlobalNavList"
@@ -32,10 +31,5 @@ function ConfigureLookupField() {
     }
 }
 
-# MAIN 
-Remove-PnPList -Identity "Global Nav List"
-ProvisionList
+ProvisionLists
 ConfigureLookupField
-
-Write-Host ""
-Write-Host "Provisioning Completed." -ForegroundColor Blue
