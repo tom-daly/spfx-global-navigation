@@ -16,10 +16,11 @@ It's designed to work for Office 365 primarily but would work on prem 2019. Addi
 
 ## Overview
 1. Provision the Global Nav List
+2. Build the SPFx Application Customizer
 2. Deploy the SPFx Application Customizer
 3. Add the App to your site
 
-## Provision the Global Nav List
+## Step 1 - Provision the Global Nav List
 
 + You need to provision the list using Powershell PnP.
 + The "/provisioning" folder will contain the deployment script & the list definition. 
@@ -28,7 +29,11 @@ It's designed to work for Office 365 primarily but would work on prem 2019. Addi
 + Next it will ask for your user credentials to log into the site. This information is not stored and it used by Powershell PnP one time. 
 + After that the provisioning process will begin to create the list through the Powershell PnP template and then connect the lookup field.
 
+## Step 2 - Build the Solution
 
+## Step 3 - Deploy the Application Customizer
+
+## Step 4 - Activate the App
 
 ### Additional Dependencies for Classic Mode Build ###
 dependencies
