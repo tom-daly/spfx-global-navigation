@@ -30,10 +30,19 @@ It's designed to work for Office 365 primarily but would work on prem 2019. Addi
 + After that the provisioning process will begin to create the list through the Powershell PnP template and then connect the lookup field.
 
 ## Step 2 - Build the Solution
+...coming soon
 
 ## Step 3 - Deploy the Application Customizer
+...coming soon
 
 ## Step 4 - Activate the App
+...coming soon
+
+
+
+
+
+
 
 ### Additional Dependencies for Classic Mode Build ###
 dependencies
