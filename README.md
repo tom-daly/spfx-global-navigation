@@ -1,3 +1,11 @@
+# Getting Started
+
+This project is an SPFx application customizer built for Modern SharePoint sites / pages. It will place itself in the header placeholder of your site and pull the global navigation from the root site "/" aka "https://{domain}.sharepoint.com/" 
+
+***Currently the purpose of this repository is for you to pull down the code and build the solution to produce the .sppkg file that would be used to deploy to your SharePoint tenant app catalog.***
+
+It's designed to work for Office 365 primarily but would work on prem 2019. Additionaly it will also generate an output to deploy to Classic Sites. 
+
 ## Modern Page
 Designed for modern sites
 ![demo on modern](https://i.imgur.com/sSMCwKF.gif)
@@ -6,19 +14,11 @@ Designed for modern sites
 Also works on classic sites
 ![demo on classic](https://i.imgur.com/BUnbHvW.gif)
 
-# Getting Started
-
-This project is an SPFx application customizer built for Modern SharePoint sites / pages. It will place itself in the header placeholder of your site and pull the global navigation from the root site "/" aka "https://{domain}.sharepoint.com/" 
-
-Currently the purpose of this repository is for you to pull down the code and build the solution to produce the .sppkg file that would be used to deploy to your SharePoint tenant app catalog. 
-
-It's designed to work for Office 365 primarily but would work on prem 2019. Additionaly it will also generate an output to deploy to Classic Sites. 
-
 # Prerequisites
 
-1. SPFx Development Environment https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment
-2. Powershell PnP https://github.com/SharePoint/PnP-PowerShell/releases
-3. Tenant App Catalog https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant#create-app-catalog-site
+1. [SPFx Development Environment](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment)
+2. [Powershell PnP](https://github.com/SharePoint/PnP-PowerShell/releases)
+3. [Tenant App Catalog](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant#create-app-catalog-site)
 4. Node 8.16.0
 
 # Installation & Deployment
