@@ -63,11 +63,13 @@ When the build script completes you will have the app package for modern sites l
 ### Classic JS File Build
 As mentioned in the introduction, by using the 'build.cmd' the build process will generate a JavaScript file suitable for deployment on a Classic site. 
 
-Without going into too much detail, the build process calls a separate webpack configuration that points to a seperate component for Classic Mode. This webpack configuration and the custom component both have additional references and polyfills in order for it to work on a Classic Site. Develop once and build for two completely different environments.
+Without going into too much detail, the build process calls a separate webpack configuration that points to a seperate component for Classic Mode. This webpack configuration and the custom component both have additional references and polyfills in order for it to work on a Classic Site. 
 
 After running the build script you will have the .js file for classic sites located in './classic-dist/top-navigation.js'
 
 ![JavaScript File](https://i.imgur.com/adOUY2h.png)
+
+***Deploying to a Classic site will target and override the default navigation. The code targets the element '#DeltaTopNavigation'. This reference can be changed in the 'components/ClassicMode/ClassicMode.ts' file*** 
 
 ## Step 3 - Deploy the Application Customizer
 
@@ -83,7 +85,7 @@ Modern site deployment is straightforward. [For more information about this proc
 #### Classic Deployment
 For classic mode support we need to upload a file into the 'Style Library/spfx-global-nav/js/top-navigation.js' of the site collection and then link to the JavaScript file. Inside the './classic-dist' folder there will be a 'deploy.ps1' that will automate this process. Understand that this deployment is per site collection, meaning that each site collection gets it's own file. 
 
-**Consider centrally hosting this file in a CDN to avoid publishing it to each site collection individually.** 
+***Consider centrally hosting this file in a CDN to avoid publishing it to each site collection individually.***
 
 ***This method does not modify the masterpage of the classic site. It uses ScriptLinks to register itself to the site***
 
@@ -112,24 +114,27 @@ Activation on a Modern site deployment is straightforward. [For more information
 # Modifications
 
 ## Updating the Styles
-...coming soon
+The project was written with a global sass stylesheet for Modern sites first and was then extended to support Classic sites. It should be simple enough to update the hex colors and rebuild to match your site's palette. 
+
++ globalNavStyles.scss - Contains all the styles for the menu for both Classic and Modern sites. This file contains sass variables to easily update the colors of the menus to match your environment. All the other sass should not be adjusted as it controls the function of the menu.
++ classicModeStyles.scss - Contains styles to speficic to Classic sites. This file contains styles to hide the default top navigation menu on a Classic site. 
 
 ## Home Node Icon
-...coming soon
+The project's css file contains a few lines of code that tranfer a node called 'Home' into a house. That can be removed or commented out and rebuilt
 
-\
-\
-\
-\
-\
+When nodes are built their labels are [slugified](https://www.npmjs.com/package/slugify) and added as classes. Custom CSS can be written to target any node element by their slugified labels.
 
-
+  
+    
+      
+      
 
 # Notes
 
 ### ADFS Support
-Problem: The deploy script is not working because your tenant is using ADFS or MFS to authenticate.
-Solution: Each 'deploy.ps1' contains a simple site url check to use either the standard login approach or the web login. Using web login is necessary for ADFS or MFA authentication and Powershell PnP to work together. Inside the each of the 'deploy.ps1' scripts modify line 3 to include your SharePoint site url between the *'s. When you run the script again and if the site url matches then it will execute the Powershell PnP command, Connect-PnPOnline with the UseWebLogin parameter. This will open a browser and allow you login just as your normally would and pass the credentials back to the Powershell PnP cmdlets.
+**Problem**: The deploy script is not working because your tenant is using ADFS or MFS to authenticate.
+
+**Solution**: Each 'deploy.ps1' contains a simple site url check to use either the standard login approach or the web login. Using web login is necessary for ADFS or MFA authentication and Powershell PnP to work together. Inside the each of the 'deploy.ps1' scripts modify line 3 to include your SharePoint site url between the *'s. When you run the script again and if the site url matches then it will execute the Powershell PnP command, Connect-PnPOnline with the UseWebLogin parameter. This will open a browser and allow you login just as your normally would and pass the credentials back to the Powershell PnP cmdlets.
 
 ![adfs support](https://i.imgur.com/nSN2IE4.png)
 
@@ -140,14 +145,16 @@ There were a few additional depencies that were required for a React component t
 The following changes were made to the 'packages.json' of this project.
 
 ```json
-dependencies
-@babel/polyfill
+"dependencies": {
+    "@babel/polyfill": "^7.4.4"
+}
+
+```shell
+npm install @babel/polyfill --save
 ```
 
-npm install @babel/polyfill --save
-
 ```json
-devDependencies: {
+"devDependencies": {
   "css-loader": "^2.1.1",
   "mini-css-extract-plugin": "^0.6.0",
   "sass-loader": "^7.1.0",
@@ -155,10 +162,13 @@ devDependencies: {
 }
 ```
 
+```shell
 npm install css-loader mini-css-extract-plugin sass-loader style-loader --save-devDependencies
+```
 
 ### Building the code for Classic Mode
-Execute the following command:
+The following command is required to be executed in order to generate a Classic mode JavaScript file.
 
+```shell
 npx webpack --config webpack.config.js
-
+```

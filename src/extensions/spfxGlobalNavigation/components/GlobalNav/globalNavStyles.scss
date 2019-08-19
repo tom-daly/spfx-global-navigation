@@ -1,26 +1,22 @@
 @import url("https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css");
 
+// Navigation Colors
+//First Level Navigation
 $navNodeTextColor: #00a0f5;
 $navNodeBgColor: #ffffff;
 $navNodeHoverTextColor: #ffffff;
 $navNodeHoverBgColor: #00a0f5;
 $navNodeBorderColor: #eeeeee;
 
+//Second+ Level Navigation
 $navNodeChildTextColor: #1e1e1e;
 $navNodeChildBgColor: #ffffff;
 $navNodeChildHoverTextColor: #00a0f5;
 $navNodeChildHoverBgColor: #ffffff;
 
+//Drop Down Menu Background
 $navDropDownMenuBgColor: #ffffff;
-
-#DeltaTopNavigation {
-  > div[id$="TopNavigationMenu"] {
-    display: none;
-  }
-  .global-nav {
-    margin: 0;
-  }
-}
+// end Navigation Colors
 
 .global-nav {
   position: relative;
@@ -149,6 +145,7 @@ $navDropDownMenuBgColor: #ffffff;
   }
 }
 
+// Specific to level 0, aka the top level nodes
 .td-dropdown[data-level="0"] {
   display: inline-block;
 
@@ -159,6 +156,7 @@ $navDropDownMenuBgColor: #ffffff;
   }
 }
 
+// Specific to all levels, except the top level nodes
 .td-dropdown:not([data-level="0"]) {
   display: block;
   width: 100%;
@@ -171,6 +169,7 @@ $navDropDownMenuBgColor: #ffffff;
   }
 }
 
+// Home Icon Customizations
 .home {
   a {
     width: 16px;
