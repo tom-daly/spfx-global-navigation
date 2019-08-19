@@ -1,18 +1,21 @@
-# Getting Started
-
+# Introduction
 This project is an SPFx application customizer built for Modern SharePoint sites / pages. It will place itself in the header placeholder of your site and pull the global navigation from the root site "/" aka "https://{domain}.sharepoint.com/" 
-
-***Currently the purpose of this repository is for you to pull down the code and build the solution to produce the .sppkg file that would be used to deploy to your SharePoint tenant app catalog.***
 
 It's designed to work for Office 365 primarily but would work on prem 2019. Additionaly it will also generate an output to deploy to Classic Sites. 
 
-## Modern Page
+## Why does this project exist? 
+Most people are running their Office 365 environment in some sort of hybrid of Classic sites and Modern sites. This solution helps to merge the two, creating a consistent navigation across both. 
+
+## Modern Page Demonstration
 Designed for modern sites
 ![demo on modern](https://i.imgur.com/sSMCwKF.gif)
 
-## Classic Page
+## Classic Page Demonstration
 Also works on classic sites
 ![demo on classic](https://i.imgur.com/BUnbHvW.gif)
+
+# Getting Started
+Currently the purpose of this repository is for you to pull down the code and build the solution to produce the .sppkg file that would be used to deploy to your SharePoint tenant app catalog.
 
 # Prerequisites
 
@@ -52,13 +55,17 @@ It is recommended to run the 'build.cmd' file from the projects root folder. Thi
 
 ![build](https://i.imgur.com/8G55Dym.png)
 
-### Modern App 
+### Modern App Build
 When the build script completes you will have the app package for modern sites located in './sharepoint/solution/spfx-global-navigation.sppkg'
 
 ![App Package](https://i.imgur.com/5I1BrRE.png)
 
-### Classic JS File
-When the build script completes you will have the .js file for classic sites located in './classic-dist/top-navigation.js'
+### Classic JS File Build
+As mentioned in the introduction, by using the 'build.cmd' the build process will generate a JavaScript file suitable for deployment on a Classic site. 
+
+Without going into too much detail, the build process calls a separate webpack configuration that points to a seperate component for Classic Mode. This webpack configuration and the custom component both have additional references and polyfills in order for it to work on a Classic Site. Develop once and build for two completely different environments.
+
+After running the build script you will have the .js file for classic sites located in './classic-dist/top-navigation.js'
 
 ![JavaScript File](https://i.imgur.com/adOUY2h.png)
 
@@ -91,7 +98,16 @@ For classic mode support we need to upload a file into the 'Style Library/spfx-g
 ***This screenshot shows the attached scriptlink link using a Chrome Extension, [SP-Editor](https://chrome.google.com/webstore/detail/sp-editor/ecblfcmjnbbgaojblcpmjoamegpbodhd?hl=en)***
 
 ## Step 4 - Activate the App
-...coming soon
+Activation on a Modern site deployment is straightforward. [For more information about this process see official MS Docs](https://docs.microsoft.com/en-us/sharepoint/use-app-catalog)
+
+1. Navigate to your Modern site
+2. From the gear icon, click 'Add an App'
+3. In the left menu, click 'From your Organization'
+4. Click 'spfx-global-navigation-client-side-solution'
+
+***In a minute or two it will be activated on that modern site***
+
+![activate solution](https://i.imgur.com/4S73iiN.gif)
 
 # Modifications
 
@@ -119,16 +135,25 @@ Solution: Each 'deploy.ps1' contains a simple site url check to use either the s
 
 
 ### Additional Dependencies for Classic Mode Build ###
+There were a few additional depencies that were required for a React component to work on a Classic site. 
+
+The following changes were made to the 'packages.json' of this project.
+
+```json
 dependencies
 @babel/polyfill
+```
 
 npm install @babel/polyfill --save
 
-devDependencies
-"css-loader": "^2.1.1",
-"mini-css-extract-plugin": "^0.6.0",
-"sass-loader": "^7.1.0",
-"style-loader": "^0.23.1",
+```json
+devDependencies: {
+  "css-loader": "^2.1.1",
+  "mini-css-extract-plugin": "^0.6.0",
+  "sass-loader": "^7.1.0",
+  "style-loader": "^0.23.1"
+}
+```
 
 npm install css-loader mini-css-extract-plugin sass-loader style-loader --save-devDependencies
 
