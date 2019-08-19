@@ -31,13 +31,15 @@ The following steps assume that you've cloned this repository or downloaded the 
 3. Add the App to your site
 
 ## Step 1 - Provision the Global Nav List
+In this step we will provision the Global Navigation list to your tenant using a Powershell PnP provisioning template and cmdlets. Inside the './provisioning' folder there will be a 'deploy.ps1' that will automate this process.
 
-+ You need to provision the list using Powershell PnP.
-+ The "/provisioning" folder will contain the deployment script & the list definition. 
-+ From the Powershell Command Line just run "./deploy.ps1" 
-+ This will ask you for the site url. It is recommended to deploy the list to the root "https://{domain}.sharepoint.com" of your tenant as this is where the application customizer is designed to look for the list by default. 
-+ Next it will ask for your user credentials to log into the site. This information is not stored and it used by Powershell PnP one time. 
-+ After that the provisioning process will begin to create the list through the Powershell PnP template and then connect the lookup field.
+***It is recommended to deploy the list to the root "https://{domain}.sharepoint.com" of your tenant as this is where the application customizer is designed to look for the list by default.*** 
+
+1. Navigate to a Classic site
+2. From the SharePoint Online Management Shell navigate to the 'provisioning' folder
+3. Run './deploy.ps1' 
+4. Enter url of the classic site that you want to deploy to 'https://{domain}.sharepoint.com/'
+5. Enter your credentials
 
 ![provision the list](https://i.imgur.com/rQtjBEC.gif)
 
@@ -61,7 +63,26 @@ When the build script completes you will have the .js file for classic sites loc
 ![JavaScript File](https://i.imgur.com/adOUY2h.png)
 
 ## Step 3 - Deploy the Application Customizer
-...coming soon
+
+#### Modern Deployment
+Modern site deployment is straightforward. [For more information about this process see official MS Docs](https://docs.microsoft.com/en-us/sharepoint/use-app-catalog)
+
+1. Navigate to your tenant App Catalog
+2. Click Apps for SharePoint in the Quick Launch menu
+3. Click and drag the .sppkg file into the tenant App Catalog
+
+![deploy app customizer](https://i.imgur.com/il6utDR.gifv)
+
+#### Classic Deployment
+For classic mode support we need to upload a file into the Style Library of the site collection and then link to the JavaScript file. Inside the './classic-dist' folder there will be a 'deploy.ps1' that will automate this process. Understand that this deployment is per site collection, meaning that each site collection gets it's own file. You might want to think about centrally hosting this file in a CDN to avoid publishing it to each site collection individually. 
+
+1. Navigate to a Classic site
+2. From the SharePoint Online Management Shell navigate to the 'classic-dist' folder
+3. Run './deploy.ps1' 
+4. Enter url of the classic site that you want to deploy to 'https://{domain}.sharepoint.com/sites/{classic-site}'
+5. Enter your credentials
+
+![deploy for classic](https://i.imgur.com/DIqcNTd.gifv)
 
 ## Step 4 - Activate the App
 ...coming soon
