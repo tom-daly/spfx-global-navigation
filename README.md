@@ -76,6 +76,8 @@ Modern site deployment is straightforward. [For more information about this proc
 #### Classic Deployment
 For classic mode support we need to upload a file into the Style Library of the site collection and then link to the JavaScript file. Inside the './classic-dist' folder there will be a 'deploy.ps1' that will automate this process. Understand that this deployment is per site collection, meaning that each site collection gets it's own file. You might want to think about centrally hosting this file in a CDN to avoid publishing it to each site collection individually. 
 
+***This method does not modify the masterpage of the classic site. It uses ScriptLinks to register itself to the site***
+
 1. Navigate to a Classic site
 2. From the SharePoint Online Management Shell navigate to the 'classic-dist' folder
 3. Run './deploy.ps1' 
@@ -83,6 +85,8 @@ For classic mode support we need to upload a file into the Style Library of the 
 5. Enter your credentials
 
 ![deploy for classic](https://i.imgur.com/DIqcNTd.gif)
+
+***This screenshot shows the attached scriptlink link using a Chrome Extension, (SP-Editor)[https://chrome.google.com/webstore/detail/sp-editor/ecblfcmjnbbgaojblcpmjoamegpbodhd?hl=en]***
 
 ## Step 4 - Activate the App
 ...coming soon
