@@ -43,17 +43,22 @@ The following steps assume that you've cloned this repository or downloaded the 
 
 ## Step 2 - Build the Solution
 It is recommended to run the 'build.cmd' file from the projects root folder. This file does all the normal SPFx build commands such as build, bundle, package-solution but it will also generate the necessary file needed for support on classic sites. The 'build.cmd' also does a number of other things out of scope for guide. Please refer to the following blogs posts for more information on this file.
-[Simple Build Script for the SharePoint Framework](https://thomasdaly.net/2018/05/07/simple-build-script-for-the-sharepoint-framework/)
-[SPFx Automatically Generating Revision Numbers](https://thomasdaly.net/2018/08/12/spfx-automatically-generating-revision-numbers/)
-[Update: SPFx Automatically Generating Revision Numbers + Versioning](https://thomasdaly.net/2018/08/21/update-spfx-automatically-generating-revision-numbers-versioning/)
+
++ [Simple Build Script for the SharePoint Framework](https://thomasdaly.net/2018/05/07/simple-build-script-for-the-sharepoint-framework/)
++ [SPFx Automatically Generating Revision Numbers](https://thomasdaly.net/2018/08/12/spfx-automatically-generating-revision-numbers/)
++ [Update: SPFx Automatically Generating Revision Numbers + Versioning](https://thomasdaly.net/2018/08/21/update-spfx-automatically-generating-revision-numbers-versioning/)
 
 ![build](https://i.imgur.com/8G55Dym.png)
 
 ### Modern App 
 When the build script completes you will have the app package for modern sites located in './sharepoint/solution/spfx-global-navigation.sppkg'
 
+![App Package](https://i.imgur.com/5I1BrRE.png)
+
 ### Classic JS File
 When the build script completes you will have the .js file for classic sites located in './classic-dist/top-navigation.js'
+
+![JavaScript File](https://i.imgur.com/adOUY2h.png)
 
 ## Step 3 - Deploy the Application Customizer
 ...coming soon
@@ -64,8 +69,15 @@ When the build script completes you will have the .js file for classic sites loc
 
 
 
+\
+\
+\
+\
+\
 
 
+
+# Notes
 
 ### Additional Dependencies for Classic Mode Build ###
 dependencies
