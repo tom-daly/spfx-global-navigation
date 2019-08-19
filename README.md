@@ -86,7 +86,7 @@ For classic mode support we need to upload a file into the Style Library of the 
 
 ![deploy for classic](https://i.imgur.com/DIqcNTd.gif)
 
-***This screenshot shows the attached scriptlink link using a Chrome Extension, (SP-Editor)[https://chrome.google.com/webstore/detail/sp-editor/ecblfcmjnbbgaojblcpmjoamegpbodhd?hl=en]***
+***This screenshot shows the attached scriptlink link using a Chrome Extension, [SP-Editor](https://chrome.google.com/webstore/detail/sp-editor/ecblfcmjnbbgaojblcpmjoamegpbodhd?hl=en)***
 
 ## Step 4 - Activate the App
 ...coming soon
