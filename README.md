@@ -19,8 +19,10 @@ It's designed to work for Office 365 primarily but would work on prem 2019. Addi
 1. SPFx Development Environment https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment
 2. Powershell PnP https://github.com/SharePoint/PnP-PowerShell/releases
 3. Tenant App Catalog https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant#create-app-catalog-site
+4. Node 8.16.0
 
 # Installation & Deployment
+The following steps assume that you've cloned this repository or downloaded the files and successfully installed all the dependencies using 'npm install'. Make sure to use the same version of node to get a successfull build. 
 
 ## Overview
 1. Provision the Global Nav List
@@ -37,10 +39,21 @@ It's designed to work for Office 365 primarily but would work on prem 2019. Addi
 + Next it will ask for your user credentials to log into the site. This information is not stored and it used by Powershell PnP one time. 
 + After that the provisioning process will begin to create the list through the Powershell PnP template and then connect the lookup field.
 
-![provision the list](https://i.imgur.com/rQtjBEC.gifv)
+![provision the list](https://i.imgur.com/rQtjBEC.gif)
 
 ## Step 2 - Build the Solution
-...coming soon
+It is recommended to run the 'build.cmd' file from the projects root folder. This file does all the normal SPFx build commands such as build, bundle, package-solution but it will also generate the necessary file needed for support on classic sites. The 'build.cmd' also does a number of other things out of scope for guide. Please refer to the following blogs posts for more information on this file.
+[Simple Build Script for the SharePoint Framework](https://thomasdaly.net/2018/05/07/simple-build-script-for-the-sharepoint-framework/)
+[SPFx Automatically Generating Revision Numbers](https://thomasdaly.net/2018/08/12/spfx-automatically-generating-revision-numbers/)
+[Update: SPFx Automatically Generating Revision Numbers + Versioning](https://thomasdaly.net/2018/08/21/update-spfx-automatically-generating-revision-numbers-versioning/)
+
+![build](https://i.imgur.com/8G55Dym.png)
+
+### Modern App 
+When the build script completes you will have the app package for modern sites located in './sharepoint/solution/spfx-global-navigation.sppkg'
+
+### Classic JS File
+When the build script completes you will have the .js file for classic sites located in './classic-dist/top-navigation.js'
 
 ## Step 3 - Deploy the Application Customizer
 ...coming soon
