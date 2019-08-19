@@ -37,6 +37,8 @@ It's designed to work for Office 365 primarily but would work on prem 2019. Addi
 + Next it will ask for your user credentials to log into the site. This information is not stored and it used by Powershell PnP one time. 
 + After that the provisioning process will begin to create the list through the Powershell PnP template and then connect the lookup field.
 
+![provision the list](https://i.imgur.com/rQtjBEC.gifv)
+
 ## Step 2 - Build the Solution
 ...coming soon
 
