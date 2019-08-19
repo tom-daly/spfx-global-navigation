@@ -74,7 +74,9 @@ Modern site deployment is straightforward. [For more information about this proc
 ![deploy app customizer](https://i.imgur.com/il6utDR.gif)
 
 #### Classic Deployment
-For classic mode support we need to upload a file into the Style Library of the site collection and then link to the JavaScript file. Inside the './classic-dist' folder there will be a 'deploy.ps1' that will automate this process. Understand that this deployment is per site collection, meaning that each site collection gets it's own file. You might want to think about centrally hosting this file in a CDN to avoid publishing it to each site collection individually. 
+For classic mode support we need to upload a file into the 'Style Library/spfx-global-nav/js/top-navigation.js' of the site collection and then link to the JavaScript file. Inside the './classic-dist' folder there will be a 'deploy.ps1' that will automate this process. Understand that this deployment is per site collection, meaning that each site collection gets it's own file. 
+
+**Consider centrally hosting this file in a CDN to avoid publishing it to each site collection individually.** 
 
 ***This method does not modify the masterpage of the classic site. It uses ScriptLinks to register itself to the site***
 
@@ -84,15 +86,20 @@ For classic mode support we need to upload a file into the Style Library of the 
 4. Enter url of the classic site that you want to deploy to 'https://{domain}.sharepoint.com/sites/{classic-site}'
 5. Enter your credentials
 
-![deploy for classic](https://i.imgur.com/DIqcNTd.gif)
+![deploy for classic](https://i.imgur.com/Z2AF1Sh.gif)
 
 ***This screenshot shows the attached scriptlink link using a Chrome Extension, [SP-Editor](https://chrome.google.com/webstore/detail/sp-editor/ecblfcmjnbbgaojblcpmjoamegpbodhd?hl=en)***
 
 ## Step 4 - Activate the App
 ...coming soon
 
+# Modifications
 
+## Updating the Styles
+...coming soon
 
+## Home Node Icon
+...coming soon
 
 \
 \
@@ -103,6 +110,13 @@ For classic mode support we need to upload a file into the Style Library of the 
 
 
 # Notes
+
+### ADFS Support
+Problem: The deploy script is not working because your tenant is using ADFS or MFS to authenticate.
+Solution: Each 'deploy.ps1' contains a simple site url check to use either the standard login approach or the web login. Using web login is necessary for ADFS or MFA authentication and Powershell PnP to work together. Inside the each of the 'deploy.ps1' scripts modify line 3 to include your SharePoint site url between the *'s. When you run the script again and if the site url matches then it will execute the Powershell PnP command, Connect-PnPOnline with the UseWebLogin parameter. This will open a browser and allow you login just as your normally would and pass the credentials back to the Powershell PnP cmdlets.
+
+![adfs support](https://i.imgur.com/nSN2IE4.png)
+
 
 ### Additional Dependencies for Classic Mode Build ###
 dependencies
