@@ -71,7 +71,7 @@ Modern site deployment is straightforward. [For more information about this proc
 2. Click Apps for SharePoint in the Quick Launch menu
 3. Click and drag the .sppkg file into the tenant App Catalog
 
-![deploy app customizer](https://i.imgur.com/il6utDR.gifv)
+![deploy app customizer](https://i.imgur.com/il6utDR.gif)
 
 #### Classic Deployment
 For classic mode support we need to upload a file into the Style Library of the site collection and then link to the JavaScript file. Inside the './classic-dist' folder there will be a 'deploy.ps1' that will automate this process. Understand that this deployment is per site collection, meaning that each site collection gets it's own file. You might want to think about centrally hosting this file in a CDN to avoid publishing it to each site collection individually. 
@@ -82,7 +82,7 @@ For classic mode support we need to upload a file into the Style Library of the 
 4. Enter url of the classic site that you want to deploy to 'https://{domain}.sharepoint.com/sites/{classic-site}'
 5. Enter your credentials
 
-![deploy for classic](https://i.imgur.com/DIqcNTd.gifv)
+![deploy for classic](https://i.imgur.com/DIqcNTd.gif)
 
 ## Step 4 - Activate the App
 ...coming soon
