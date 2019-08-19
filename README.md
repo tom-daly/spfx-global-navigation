@@ -124,10 +124,10 @@ The project's css file contains a few lines of code that tranfer a node called '
 
 When nodes are built their labels are [slugified](https://www.npmjs.com/package/slugify) and added as classes. Custom CSS can be written to target any node element by their slugified labels.
 
-  
-    
-      
-      
+&nbsp;    
+&nbsp;  
+&nbsp;  
+&nbsp;  
 
 # Notes
 
@@ -148,6 +148,7 @@ The following changes were made to the 'packages.json' of this project.
 "dependencies": {
     "@babel/polyfill": "^7.4.4"
 }
+```
 
 ```shell
 npm install @babel/polyfill --save
