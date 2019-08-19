@@ -86,7 +86,7 @@ For classic mode support we need to upload a file into the 'Style Library/spfx-g
 4. Enter url of the classic site that you want to deploy to 'https://{domain}.sharepoint.com/sites/{classic-site}'
 5. Enter your credentials
 
-![deploy for classic](https://i.imgur.com/Z2AF1Sh.gif)
+![deploy for classic](https://i.imgur.com/bdkWTs7.gif)
 
 ***This screenshot shows the attached scriptlink link using a Chrome Extension, [SP-Editor](https://chrome.google.com/webstore/detail/sp-editor/ecblfcmjnbbgaojblcpmjoamegpbodhd?hl=en)***
 
