@@ -1,11 +1,13 @@
 $siteUrl = Read-Host -Prompt "Enter the site url"
 
+#if using MFA or ADFS, replace 'ADFS_SITE_URL.com' with your real domain
 if($siteUrl -like '*ADFS_SITE_URL.com*') {
     Connect-PnPOnline -url $siteUrl -UseWebLogin
 }
 else {
     Connect-PnPOnline -url $siteUrl -Credentials (Get-Credential)
 }
+
 function UpdateFile ($localFile, $file, $folder) {
     $currentSiteServerRelativeUrl = Get-PnPSite -Includes ServerRelativeUrl | % { $_.ServerRelativeUrl }
     $currentSiteServerRelativeUrl = $currentSiteServerRelativeUrl.TrimEnd("/")
