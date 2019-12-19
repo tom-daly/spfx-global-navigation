@@ -22,7 +22,7 @@ Currently the purpose of this repository is for you to pull down the code and bu
 1. [SPFx Development Environment](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-development-environment)
 2. [Powershell PnP](https://github.com/SharePoint/PnP-PowerShell/releases)
 3. [Tenant App Catalog](https://docs.microsoft.com/en-us/sharepoint/dev/spfx/set-up-your-developer-tenant#create-app-catalog-site)
-4. Node 8.16.0
+4. Node 8.x.x or 10.x.x
 
 # Installation & Deployment
 The following steps assume that you've cloned this repository or downloaded the files and successfully installed all the dependencies using 'npm install'. Make sure to use the same version of node to get a successfull build. 
