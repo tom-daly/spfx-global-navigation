@@ -28,7 +28,7 @@ module.exports = function(build) {
         ) + String(newBuildNumber);
       gutil.log("New Version: " + newVersionNumber);
       pkgSolution.solution.version = newVersionNumber;
-      fs.writeFile(
+      fs.writeFileSync(
         "./config/package-solution.json",
         JSON.stringify(pkgSolution, null, 4)
       );
@@ -47,7 +47,7 @@ module.exports = function(build) {
     var newVersionNumber = pkgConfig.version.split("-")[0] + ".0";
     pkgSolution.solution.version = newVersionNumber;
     gutil.log("New Version:\t" + pkgSolution.solution.version);
-    fs.writeFile(
+    fs.writeFileSync(
       "./config/package-solution.json",
       JSON.stringify(pkgSolution, null, 4)
     );
