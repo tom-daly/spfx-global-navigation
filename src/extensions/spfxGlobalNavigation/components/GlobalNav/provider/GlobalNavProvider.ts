@@ -25,6 +25,7 @@ export default class GlobalNavProvider {
         "GlobalNavOpenInNewWindow",
         "GlobalNavParent/Title"
       )
+      .top(2000)
       .expand("GlobalNavParent")
       .orderBy("GlobalNavOrder")
       .get();
