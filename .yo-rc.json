@@ -13,7 +13,7 @@
     "framework": "react",
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.7.1",
+    "version": "1.9.1",
     "libraryName": "spfx-global-navigation",
     "libraryId": "6bada025-fad2-44af-9631-32fbcb5cb0e6",
     "packageManager": "npm",

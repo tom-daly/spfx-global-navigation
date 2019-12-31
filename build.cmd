@@ -36,8 +36,8 @@ IF NOT [%_build%]==[] (
 
 :execute
     call gulp clean
-    call gulp build --ship %_revision%
-    call gulp bundle --ship --no-revision
+    rem call gulp build --ship %_revision%
+    call gulp bundle --ship %_revision%
     IF NOT [%1]==[] (
         call npm version %_build%
     )

@@ -1,0 +1,69 @@
+Execute in cmd
+-----------------------
+npm i -SE @microsoft/sp-core-library@1.9.1 @types/react@16.8.8 @types/react-dom@16.8.3 @microsoft/sp-dialog@1.9.1 @microsoft/sp-application-base@1.9.1 @microsoft/decorators@1.9.1 office-ui-fabric-react@6.189.2 react@16.8.5 react-dom@16.8.5
+npm i -DE @microsoft/sp-build-web@1.9.1 @microsoft/sp-module-interfaces@1.9.1 @microsoft/sp-webpart-workbench@1.9.1 @microsoft/sp-tslint-rules@1.9.1 @microsoft/rush-stack-compiler-2.9@0.7.7
+
+./.yo-rc.json
+-------------
+Update version in .yo-rc.json:
+{
+  "@microsoft/generator-sharepoint": {
+    "version": "1.9.1"
+  }
+}
+
+
+./package.json
+--------------
+Add resolution for package @types/react:
+{
+  "resolutions": {
+    "@types/react": "16.8.8"
+  }
+}
+
+Add package.json property:
+{
+  "main": "lib/index.js"
+}
+
+
+src\extensions\spfxGlobalNavigation\components\ClassicMode\classicModeStyles.scss
+---------------------------------------------------------------------------------
+Add scss file import:
+@import '~office-ui-fabric-react/dist/sass/References.scss'
+
+
+src\extensions\spfxGlobalNavigation\components\GlobalNav\globalNavStyles.scss
+-----------------------------------------------------------------------------
+Add scss file import:
+@import '~office-ui-fabric-react/dist/sass/References.scss'
+
+
+./tsconfig.json
+---------------
+Update tsconfig.json extends property:
+{
+  "extends": "./node_modules/@microsoft/rush-stack-compiler-2.9/includes/tsconfig-web.json"
+}
+
+Update tsconfig.json inlineSources value:
+{
+  "compilerOptions": {
+    "inlineSources": false
+  }
+}
+
+Update tsconfig.json strictNullChecks value:
+{
+  "compilerOptions": {
+    "strictNullChecks": false
+  }
+}
+
+Update tsconfig.json noUnusedLocals value:
+{
+  "compilerOptions": {
+    "noUnusedLocals": false
+  }
+}
