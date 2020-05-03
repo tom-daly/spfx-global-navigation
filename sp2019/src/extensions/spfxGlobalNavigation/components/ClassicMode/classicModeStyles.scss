@@ -1,0 +1,12 @@
+@import url("https://static2.sharepointonline.com/files/fabric/office-ui-fabric-core/9.6.1/css/fabric.min.css");
+
+#DeltaTopNavigation {
+  // hides the default SharePoint Top Navigation
+  > div[id$="TopNavigationMenu"] {
+    display: none;
+  }
+  // removes and padding from the global navigation inherited from the globalNavStyles.scss
+  .global-nav {
+    margin: 0;
+  }
+}
