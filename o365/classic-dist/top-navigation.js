@@ -3920,7 +3920,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pnp
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! @babel/polyfill */\"./node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! C:\\projects\\spfx-global-navigation\\src\\extensions\\spfxGlobalNavigation\\components\\ClassicMode\\ClassicMode.ts */\"./src/extensions/spfxGlobalNavigation/components/ClassicMode/ClassicMode.ts\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./src/extensions/spfxGlobalNavigation/components/ClassicMode/ClassicMode.ts?");
+eval("__webpack_require__(/*! @babel/polyfill */\"./node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! C:\\projects\\a\\spfx-global-navigation\\o365\\src\\extensions\\spfxGlobalNavigation\\components\\ClassicMode\\ClassicMode.ts */\"./src/extensions/spfxGlobalNavigation/components/ClassicMode/ClassicMode.ts\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./src/extensions/spfxGlobalNavigation/components/ClassicMode/ClassicMode.ts?");
 
 /***/ })
 
