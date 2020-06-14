@@ -1,22 +1,24 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import { override } from "@microsoft/decorators";
-import { Log } from "@microsoft/sp-core-library";
+import { override } from '@microsoft/decorators';
+import { Log } from '@microsoft/sp-core-library';
 import {
   BaseApplicationCustomizer,
   PlaceholderContent,
   PlaceholderName
-} from "@microsoft/sp-application-base";
+} from '@microsoft/sp-application-base';
 import GlobalNav from "./components/GlobalNav/GlobalNav";
-import * as strings from "SpfxGlobalNavigationApplicationCustomizerStrings";
+import * as strings from 'SpfxGlobalNavigationApplicationCustomizerStrings';
 
-const LOG_SOURCE: string = "SpfxGlobalNavigationApplicationCustomizer";
+const LOG_SOURCE: string = 'SpfxGlobalNavigationApplicationCustomizer';
 
-export interface ISpfxGlobalNavigationApplicationCustomizerProperties {}
+export interface ISpfxGlobalNavigationApplicationCustomizerProperties {
+}
 
-export default class SpfxGlobalNavigationApplicationCustomizer extends BaseApplicationCustomizer<
-  ISpfxGlobalNavigationApplicationCustomizerProperties
-> {
+/** A Custom Action which can be run during execution of a Client Side Application */
+export default class SpfxGlobalNavigationApplicationCustomizer
+  extends BaseApplicationCustomizer<ISpfxGlobalNavigationApplicationCustomizerProperties> {
+
   private topPlaceholder: PlaceholderContent | undefined;
 
   @override

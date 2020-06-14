@@ -1,22 +1,12 @@
 {
-  "@pnp/generator-spfx": {
-    "framework": "react",
-    "pnpFramework": "reactjs.plus",
-    "pnp-libraries": [
-      "@pnp/pnpjs"
-    ],
-    "pnp-vetting": [
-      "webpack-analyzer"
-    ]
-  },
   "@microsoft/generator-sharepoint": {
-    "framework": "react",
     "isCreatingSolution": true,
     "environment": "spo",
-    "version": "1.9.1",
+    "version": "1.10.0",
     "libraryName": "spfx-global-navigation",
-    "libraryId": "6bada025-fad2-44af-9631-32fbcb5cb0e6",
+    "libraryId": "558e59b8-e362-4284-a98c-e062bd9010e2",
     "packageManager": "npm",
+    "isDomainIsolated": false,
     "componentType": "extension",
     "extensionType": "ApplicationCustomizer"
   }

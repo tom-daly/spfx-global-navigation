@@ -3,7 +3,7 @@
     <ClientSideComponentInstance
         Title="SpfxGlobalNavigation"
         Location="ClientSideExtension.ApplicationCustomizer"
-        ComponentId="65a1351c-8ebf-473c-a828-d866a440ad75"
+        ComponentId="fddaded9-3740-4471-9010-eddabae67847"
         Properties="{&quot;testMessage&quot;:&quot;Test message&quot;}">
     </ClientSideComponentInstance>
 </Elements>
