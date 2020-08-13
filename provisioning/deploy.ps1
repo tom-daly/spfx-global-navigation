@@ -2,13 +2,12 @@
 $adfsSiteUrl = "ADFS_SITE_URL.com" 
 
 $siteUrl = Read-Host -Prompt "Enter the site url"
-if($siteUrl -like "*$($adfsSiteUrl)*" {
+if($siteUrl -like "*$($adfsSiteUrl)*") {
     Connect-PnPOnline -url $siteUrl -UseWebLogin
 }
 else {
     Connect-PnPOnline -url $siteUrl -Credentials (Get-Credential)
 }
-
 
 function ProvisionLists() {
     Write-Host ""
