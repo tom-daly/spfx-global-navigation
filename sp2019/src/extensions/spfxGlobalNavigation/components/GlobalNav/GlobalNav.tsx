@@ -3,7 +3,7 @@ import IGlobalNavItem from "./model/IGlobalNavItem";
 import GlobalNavNode from "./GlobalNavNode";
 import GlobalNavProvider from "./provider/GlobalNavProvider";
 
-require("./globalNavStyles.scss"); 
+require("./globalNavStyles.scss");
 
 export interface IGlobalNavProps {
   webUrl?: string;
@@ -49,7 +49,7 @@ export default class Header extends React.Component<
   public render(): JSX.Element {
     return (
       <div className="global-nav">
-        <ul className="root">
+        <ul className="gn-root">
           {this.state.globalNavItems.map(
             (globalNavItem: IGlobalNavItem, index: number) => (
               <GlobalNavNode key={index} globalNavItem={globalNavItem} />
