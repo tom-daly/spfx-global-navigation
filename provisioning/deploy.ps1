@@ -32,5 +32,17 @@ function ConfigureLookupField() {
     }
 }
 
+function ExitScript() {
+    Write-Host "`n`nPress any key to exit ..."
+    $x = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+    exit 0
+}
+
+function TerminatingError($msg) {
+    Write-Host "`nError: $msg"
+    ExitScript
+}
+
 ProvisionLists
 ConfigureLookupField
+ExitScript
