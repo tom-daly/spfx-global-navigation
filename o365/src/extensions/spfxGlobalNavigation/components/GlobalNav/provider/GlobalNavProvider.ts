@@ -28,6 +28,7 @@ export default class GlobalNavProvider {
       .top(2000)
       .expand("GlobalNavParent")
       .orderBy("GlobalNavOrder")
+      .orderBy("Title")
       .get();
     return this.parseGlobalNavigationNodes(results);
   }
