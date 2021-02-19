@@ -5,4 +5,5 @@ export default interface IGlobalNavItem {
   openInNewWindow: boolean;
   subNavItems: IGlobalNavItem[];
   level: number;
+  secured: boolean;
 }

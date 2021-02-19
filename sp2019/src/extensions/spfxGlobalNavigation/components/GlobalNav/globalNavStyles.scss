@@ -24,6 +24,14 @@ $navDropDownMenuBgColor: #ffffff;
   width: 100%;
   background-color: $navNodeBgColor;
 
+  .vpn-icon {
+    padding-left: 5px;
+    margin-left: 0 !important;
+    position: relative;
+    top: 2px;
+    font-size: 14px !important;
+  }
+
   /* hub nav */
   .ms-HorizontalNavItem {
     padding: 20px;

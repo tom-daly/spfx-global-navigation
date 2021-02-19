@@ -20,7 +20,9 @@ export default class GlobalNavNode extends React.Component<IGlobalNavNodeProps, 
           target={this.props.globalNavItem.openInNewWindow ? "_blank" : "_self"}
         >
           {this.props.globalNavItem.title}
-          {console.log(this.props.globalNavItem)}
+          {this.props.globalNavItem.secured && (
+            <i className={`vpn-icon ms-Icon ms-Icon--ShieldSolid`} />
+          )}
           {this.props.globalNavItem.subNavItems && <i className={`ms-Icon ${caretClassName}`} />}
         </a>
         {this.props.globalNavItem.subNavItems && (

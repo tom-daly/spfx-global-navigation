@@ -6,4 +6,5 @@ export default interface ISPGlobalNavItem {
   GlobalNavParent?: {
     Title: string;
   };
+  GlobalNavSecured?: boolean;
 }

@@ -3,7 +3,7 @@
     "solution": {
         "name": "spfx-global-navigation-client-side-solution",
         "id": "a0a61011-94ea-4252-b495-eb8198de9042",
-        "version": "1.0.0.45",
+        "version": "1.0.0.67",
         "includeClientSideAssets": true,
         "features": [
             {
