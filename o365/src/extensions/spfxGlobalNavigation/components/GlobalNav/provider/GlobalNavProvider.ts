@@ -23,7 +23,8 @@ export default class GlobalNavProvider {
         "Id",
         "GlobalNavUrl",
         "GlobalNavOpenInNewWindow",
-        "GlobalNavParent/Title"
+        "GlobalNavParent/Title",
+        "GlobalNavSecured"
       )
       .top(2000)
       .expand("GlobalNavParent")
@@ -45,7 +46,8 @@ export default class GlobalNavProvider {
               url: item.GlobalNavUrl,
               openInNewWindow: item.GlobalNavOpenInNewWindow,
               subNavItems: this.getSubNavItems(spGlobalNavItems, item.Title, depth + 1),
-              level: depth
+              level: depth,
+              secured: item.GlobalNavSecured
             });
           }
         }
@@ -69,7 +71,8 @@ export default class GlobalNavProvider {
             url: item.GlobalNavUrl,
             openInNewWindow: item.GlobalNavOpenInNewWindow,
             subNavItems: this.getSubNavItems(spNavItems, item.Title, depth + 1),
-            level: depth
+            level: depth,
+            secured: item.GlobalNavSecured
           });
         }
       }

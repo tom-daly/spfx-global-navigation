@@ -9,6 +9,9 @@
                 <Field ID="{AFA820DA-E3A8-464F-9F29-C0359DCBB5D1}" Name="GlobalNavOpenInNewWindow" StaticName="GlobalNavOpenInNewWindow" DisplayName="Open In New Window" Type="Boolean" Group="Global Nav Site Columns" Overwrite="TRUE">
                     <Default>0</Default>
                 </Field>
+                <Field ID="{18C49A9E-D247-4EC3-9C52-6655FA5A6ADC}" Name="GlobalNavSecured" StaticName="GlobalNavSecured" DisplayName="Secured" Type="Boolean" Group="Global Nav Site Columns" Overwrite="TRUE">
+                    <Default>0</Default>
+                </Field>                
                 <!--<Field ID='{068992B0-C110-411E-A152-4C17E17E43DE}' Name='GlobalNavParent' StaticName='GlobalNavParent' DisplayName='Parent' Group='Global Nav Site Columns' Required='false' Type='Lookup' List='Lists/GlobalNavList' ShowField='Title' Overwrite='TRUE' OverwriteInChildScopes='TRUE' />-->
             </pnp:SiteFields>
             <pnp:ContentTypes>
@@ -17,6 +20,7 @@
                         <pnp:FieldRef ID="{C484ED7D-852E-4D0B-9D4A-442CAB916168}" />
                         <pnp:FieldRef ID="{B2CDE18F-F846-4FD1-9744-57ED586A198F}" />
                         <pnp:FieldRef ID="{AFA820DA-E3A8-464F-9F29-C0359DCBB5D1}" />
+                        <pnp:FieldRef ID="{18C49A9E-D247-4EC3-9C52-6655FA5A6ADC}" />
                         <!--<pnp:FieldRef ID="{068992B0-C110-411E-A152-4C17E17E43DE}" />-->
                     </pnp:FieldRefs>
                 </pnp:ContentType>
@@ -37,6 +41,7 @@
                                 <FieldRef Name="GlobalNavUrl"></FieldRef>
                                 <FieldRef Name="GlobalNavOpenInNewWindow"></FieldRef>
                                 <FieldRef Name="GlobalNavOrder"></FieldRef>
+                                <FieldRef Name="GlobalNavSecured"></FieldRef>
                                 <!--<FieldRef Name="GlobalNavParent"></FieldRef>-->
                             </ViewFields>
                             <Query>

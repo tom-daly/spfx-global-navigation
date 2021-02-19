@@ -2,7 +2,7 @@ import * as React from "react";
 import IGlobalNavNode from "./model/IGlobalNavNode";
 import IGlobalNavItem from "./model/IGlobalNavItem";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretRight, faCaretDown } from "@fortawesome/free-solid-svg-icons";
+import { faCaretRight, faCaretDown, faShieldAlt} from "@fortawesome/free-solid-svg-icons";
 import slugify from "slugify";
 
 export interface IGlobalNavNodeProps extends IGlobalNavNode {}
@@ -30,7 +30,9 @@ export default class GlobalNavNode extends React.Component<
           target={this.props.globalNavItem.openInNewWindow ? "_blank" : "_self"}
         >
           {this.props.globalNavItem.title}
-          {console.log(this.props.globalNavItem)}
+          {this.props.globalNavItem.secured && (
+            <FontAwesomeIcon icon={faShieldAlt} className="vpn-icon"></FontAwesomeIcon>
+          )}
           {this.props.globalNavItem.subNavItems &&
             this.props.globalNavItem.level > 0 && (
               <FontAwesomeIcon icon={faCaretRight} className="gn-icon"></FontAwesomeIcon>
