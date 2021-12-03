@@ -14,7 +14,14 @@ function ProvisionLists() {
     Write-Host "Provisioning Site Columns, Content Types, & Lists" -ForegroundColor Yellow
     Write-Host "-------------------------------------------------" -ForegroundColor Yellow
     Write-Host "Global Nav List" -ForegroundColor Green
-    Apply-PnPProvisioningTemplate ".\GlobalNavList\definition.xml"
+
+    if(Get-Command Apply-PnPProvisioningTemplate -ErrorAction SilentlyContinue) {
+        Apply-PnPProvisioningTemplate ".\GlobalNavList\definition.xml"
+    }
+    elseif(Get-Command Invoke-PnPSiteTemplate -ErrorAction SilentlyContinue) {
+        Invoke-PnPSiteTemplate ".\GlobalNavList\definition.xml"
+    }    
+    
     Write-Host "Provisioning done" -ForegroundColor Blue
 }
 
@@ -28,7 +35,7 @@ function ConfigureLookupField() {
     }
     else {
         $fieldXml = "<Field ID='{068992B0-C110-411E-A152-4C17E17E43DE}' Name='GlobalNavParent' StaticName='GlobalNavParent' DisplayName='Parent' Group='Global Nav Site Columns' Required='false' Type='Lookup' List='"+ $globalNavList.Id +"' ShowField='Title' Overwrite='TRUE' OverwriteInChildScopes='TRUE' />"
-        Add-PnPFieldFromXml -List "Global Nav List" -FieldXml $fieldXml | Out-Null
+        Add-PnPFieldFromXml -List "Global Nav List" -FieldXml $fieldXml -ErrorAction SilentlyContinue
     }
 }
 
