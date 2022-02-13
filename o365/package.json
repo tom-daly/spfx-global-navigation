@@ -43,7 +43,7 @@
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "ts-loader": "^5.4.3",
-    "ajv": "~5.2.2",
+    "ajv": "~6.12.3",
     "gulp": "~3.9.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11"
