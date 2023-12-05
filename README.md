@@ -1,3 +1,5 @@
+This project is no longer actively supported. Feel free to use this as an example but at this point I've moved on to new projects that require most of my time. 
+
 # Introduction
 This project is an SPFx application customizer built for Modern SharePoint sites / pages. It will place itself in the header placeholder of your site and pull the global navigation from the root site "/" aka "https://{domain}.sharepoint.com/" 
 
